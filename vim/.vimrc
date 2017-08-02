@@ -10,9 +10,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'StanAngeloff/php.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
@@ -22,18 +25,19 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'honza/vim-snippets'
-Plugin 'croaky/vim-colors-github'
 Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'dracula/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:jsx_ext_required = 0
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<M-Space>"
@@ -62,12 +66,11 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set cursorline
 
 syntax on
-set background=dark
 set t_Co=256
-colorscheme solarized
-"colorscheme github
+color dracula
  
 inoremap <C-k> <C-R>=delimitMate#JumpAny()<CR>
 let delimitMate_expand_cr = 1
@@ -105,11 +108,9 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-nnoremap ; :
-nnoremap : ;
-
-vnoremap ; :
-vnoremap : ;
+" Make enter open a new line and exit insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
 
 if has("autocmd")
 
