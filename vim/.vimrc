@@ -12,23 +12,18 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'wincent/Command-T'
 Plugin 'vim-scripts/taglist.vim'
-Plugin 'mileszs/ack.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'dracula/vim'
@@ -72,21 +67,12 @@ syntax on
 set t_Co=256
 color dracula
  
-inoremap <C-k> <C-R>=delimitMate#JumpAny()<CR>
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-
-let g:rspec_command = "Dispatch rspec {spec} --color"
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_powerline_fonts=1
-
-" RSpec.vim mappings
-map <Leader>u ;call RunCurrentSpecFile()<CR>
-map <Leader>s ;call RunNearestSpec()<CR>
-map <Leader>l ;call RunLastSpec()<CR>
-map <Leader>a ;call RunAllSpecs()<CR>
 
 vmap <Tab>   >gv
 vmap <s-Tab> <gv
